@@ -28,7 +28,7 @@ public class MyResource {
 	}
 	
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(value={MediaType.TEXT_PLAIN, "text/shortdate"})
 	@Path("writer")
 	public Date testMessageBodyWriterForDate(){
 		return Calendar.getInstance().getTime();
