@@ -1,5 +1,8 @@
 package com.intellimed.rest;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -23,4 +26,12 @@ public class MyResource {
 		return "It works! This method was called " + count
 				+ " times. The path param is " + pathParam + ", and the query param is " + queryParam;
 	}
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("writer")
+	public Date testMessageBodyWriterForDate(){
+		return Calendar.getInstance().getTime();
+	}
+	
 }
